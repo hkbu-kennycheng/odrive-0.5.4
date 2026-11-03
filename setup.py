@@ -99,7 +99,8 @@ try:
     url = 'https://github.com/odriverobotics/ODrive',
     keywords = ['odrive', 'motor', 'motor control'],
     install_requires = [
-      'ipython',  # Used to do the interactive parts of the odrivetool
+      'ipython<9',  # Used to do the interactive parts of the odrivetool.
+                    # IPython >= 9 breaks Tab completion in the embedded shell.
       'PyUSB',    # Only required for DFU. Normal communication happens through libfibre.
       'requests', # Used to by DFU to load firmware files
       'IntelHex', # Used to by DFU to download firmware from github
